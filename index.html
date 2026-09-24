@@ -1,0 +1,393 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Débora Rodrigues</title><meta name="description" content="Portfólio de Débora Rodrigues, Senior Product Designer."><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<style>
+  :root{
+    --ink:#14171f;
+    --paper:#edeef2;
+    --surface:#ffffff;
+    --accent:#2d3fe0;
+    --accent-warm:#ff5a36;
+    --line:#d7d9e0;
+    --muted:#5a5f70;
+    --radius:14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#edeef2;
+      --paper:#0f1117;
+      --surface:#171a22;
+      --accent:#7c88ff;
+      --accent-warm:#ff8362;
+      --line:#2a2e3a;
+      --muted:#9aa0b4;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#edeef2;
+    --paper:#0f1117;
+    --surface:#171a22;
+    --accent:#7c88ff;
+    --accent-warm:#ff8362;
+    --line:#2a2e3a;
+    --muted:#9aa0b4;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Work Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    padding-inline:24px;
+    padding-block:0;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:960px; margin-inline:auto;}
+
+  .mono{
+    font-family:"IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+    letter-spacing:0.02em;
+  }
+  .eyebrow{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    color:var(--accent);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:6px; height:6px; border-radius:50%;
+    background:var(--accent-warm);
+    flex:none;
+  }
+
+  h1,h2,h3{
+    font-family:"Fraunces", Georgia, serif;
+    font-weight:600;
+    line-height:1.05;
+    margin:0;
+    text-wrap:balance;
+  }
+
+  /* ---- nav ---- */
+  header.nav{
+    position:sticky;
+    top:env(safe-area-inset-top, 0px);
+    z-index:10;
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:960px; margin-inline:auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding-block:16px;
+    gap:16px;
+  }
+  .nav-mark{
+    font-family:"Fraunces", serif;
+    font-weight:600;
+    font-size:1.05rem;
+  }
+  .nav-links{
+    display:flex; gap:24px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.8rem;
+  }
+  .nav-links a{ text-decoration:none; color:var(--muted); }
+  .nav-links a:hover{ color:var(--ink); }
+  .nav-cta{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.78rem;
+    padding:8px 14px;
+    border:1px solid var(--ink);
+    border-radius:100px;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{ background:var(--ink); color:var(--paper); }
+
+  /* ---- hero ---- */
+  .hero{
+    padding-block:72px 56px;
+    display:flex; flex-direction:column; gap:22px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 6vw, 4.2rem);
+  }
+  .hero p.lede{
+    max-width:56ch;
+    font-size:1.1rem;
+    color:var(--muted);
+    line-height:1.55;
+  }
+  .tags{
+    display:flex; flex-wrap:wrap; gap:8px;
+    margin-top:8px;
+  }
+  .tag{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.72rem;
+    padding:6px 12px;
+    border:1px solid var(--line);
+    border-radius:100px;
+    color:var(--muted);
+  }
+
+  /* ---- section shell ---- */
+  section{ padding-block:56px; border-top:1px solid var(--line); }
+  .section-head{
+    display:flex; align-items:baseline; justify-content:space-between;
+    gap:16px; margin-bottom:32px; flex-wrap:wrap;
+  }
+  .section-head h2{ font-size:clamp(1.6rem, 3.4vw, 2.2rem); }
+  .section-head .count{ color:var(--muted); font-family:"IBM Plex Mono",monospace; font-size:0.85rem;}
+
+  /* ---- work grid ---- */
+  .work-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:20px;
+  }
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px;
+    display:flex; flex-direction:column; gap:14px;
+    position:relative;
+  }
+  .card .idx{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.75rem;
+    color:var(--accent-warm);
+  }
+  a.card-link{ text-decoration:none; transition:border-color .2s, transform .2s; }
+  a.card-link:hover{ border-color:var(--accent); transform:translateY(-2px); }
+  .card h3{ font-size:1.3rem; }
+  .card p{ color:var(--muted); font-size:0.95rem; line-height:1.5; margin:0;}
+  .card .stat{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.8rem;
+    color:var(--accent);
+  }
+  .placeholder-flag{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.66rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--muted);
+    border:1px dashed var(--line);
+    border-radius:6px;
+    padding:4px 8px;
+    align-self:flex-start;
+  }
+
+  /* ---- approach ---- */
+  .approach-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:24px;
+  }
+  .approach-item .num{
+    font-family:"Fraunces", serif;
+    font-size:2rem;
+    color:var(--line);
+  }
+  .approach-item h3{ font-size:1.05rem; margin-block:6px 8px;}
+  .approach-item p{ color:var(--muted); font-size:0.92rem; line-height:1.5; margin:0;}
+
+  /* ---- about ---- */
+  .about{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:40px;
+    align-items:start;
+  }
+  .about p{ color:var(--muted); line-height:1.65; font-size:1rem; }
+  .about p + p{ margin-top:14px; }
+  .facts{
+    display:flex; flex-direction:column; gap:14px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.82rem;
+  }
+  .facts .row{
+    display:flex; justify-content:space-between; gap:12px;
+    border-bottom:1px solid var(--line);
+    padding-block:10px;
+  }
+  .facts .row span:first-child{ color:var(--muted); }
+
+  /* ---- contact ---- */
+  .contact{
+    display:flex; flex-direction:column; gap:18px;
+  }
+  .contact .big-link{
+    font-family:"Fraunces", serif;
+    font-size:clamp(1.6rem, 4.6vw, 2.6rem);
+    text-decoration:none;
+    border-bottom:2px solid var(--accent);
+    width:fit-content;
+  }
+  .contact .row-links{
+    display:flex; gap:20px; flex-wrap:wrap;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.85rem;
+  }
+  .contact .row-links a{ text-decoration:none; color:var(--muted); }
+  .contact .row-links a:hover{ color:var(--ink); }
+
+  footer{
+    padding-block:32px 48px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.72rem;
+    color:var(--muted);
+  }
+
+  @media (max-width:640px){
+    .about{ grid-template-columns:1fr; }
+    .nav-links{ display:none; }
+  }
+</style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<div class="wrap">
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="nav-mark">Débora Rodrigues</div>
+      <nav class="nav-links">
+        <a href="#trabalho">Trabalho</a>
+        <a href="#processo">Processo</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+      <a class="nav-cta" href="#contato">Contato ↗</a>
+    </div>
+  </header>
+
+  <section class="hero" style="border-top:none;">
+    <div class="eyebrow">Senior Product Designer · Rebase</div>
+    <h1>Design de produto com<br>raciocínio de sistema.</h1>
+    <p class="lede">
+      Débora desenha produtos digitais do zero à escala — pesquisa, arquitetura de informação,
+      design systems e interfaces que times de engenharia conseguem construir sem retrabalho.
+    </p>
+    <div class="tags">
+      <span class="tag">UX Research</span>
+      <span class="tag">Design Systems</span>
+      <span class="tag">0 → 1</span>
+      <span class="tag">Product Strategy</span>
+      <span class="tag">Figma</span>
+    </div>
+  </section>
+
+  <section id="trabalho">
+    <div class="section-head">
+      <h2>Trabalho selecionado</h2>
+      <span class="count">Cash.Tools + 2 placeholders</span>
+    </div>
+    <div class="work-grid">
+      <a class="card card-link" href="/cash-tools/">
+        <span class="idx">01 · B2B SaaS · 2025–2026</span>
+        <h3>Cash.Tools</h3>
+        <p>Transformando uma operação de tesouraria fragmentada em um fluxo centralizado e rastreável.
+        Discovery, pesquisa com usuários, protótipo, validação e entrega do MVP.</p>
+        <span class="stat">Ver case completo →</span>
+      </a>
+      <div class="card">
+        <span class="placeholder-flag">Placeholder — troque pelo seu case</span>
+        <span class="idx">02 · B2B SaaS</span>
+        <h3>Design system para squads distribuídos</h3>
+        <p>Biblioteca de componentes e tokens adotada por múltiplos times, criada para
+        acelerar entrega sem perder consistência visual.</p>
+        <span class="stat">componentes reutilizáveis em produção</span>
+      </div>
+      <div class="card">
+        <span class="placeholder-flag">Placeholder — troque pelo seu case</span>
+        <span class="idx">03 · Marketplace</span>
+        <h3>Onboarding 0→1 para novo produto</h3>
+        <p>Da pesquisa inicial ao primeiro release: definição de arquitetura de informação
+        e fluxo de ativação para um produto lançado do zero.</p>
+        <span class="stat">produto lançado em ciclo enxuto</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="processo">
+    <div class="section-head">
+      <h2>Como ela trabalha</h2>
+    </div>
+    <div class="approach-grid">
+      <div class="approach-item">
+        <div class="num">01</div>
+        <h3>Descobrir</h3>
+        <p>Entrevistas, dados de uso e contexto de negócio antes de qualquer tela.</p>
+      </div>
+      <div class="approach-item">
+        <div class="num">02</div>
+        <h3>Definir</h3>
+        <p>Hipóteses claras, escopo enxuto, critérios de sucesso combinados com o time.</p>
+      </div>
+      <div class="approach-item">
+        <div class="num">03</div>
+        <h3>Desenhar</h3>
+        <p>Protótipos testáveis cedo, decisões documentadas, sistema antes de tela solta.</p>
+      </div>
+      <div class="approach-item">
+        <div class="num">04</div>
+        <h3>Validar</h3>
+        <p>Teste com usuários reais e acompanhamento de métrica pós-lançamento.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="section-head">
+      <h2>Sobre</h2>
+    </div>
+    <div class="about">
+      <div>
+        <p>
+          <span class="placeholder-flag" style="margin-bottom:10px;display:inline-block;">Placeholder — reescreva com sua trajetória</span><br>
+          Débora é Senior Product Designer na Rebase, com atuação em produtos digitais que vão
+          da pesquisa à entrega. Trabalha próxima de engenharia e produto para transformar
+          problemas complexos em sistemas de design simples de manter.
+        </p>
+        <p>
+          Interessada em design systems, arquitetura de informação e no equilíbrio entre
+          qualidade visual e velocidade de entrega dos times.
+        </p>
+      </div>
+      <div class="facts">
+        <div class="row"><span>Papel</span><span>Senior Product Designer</span></div>
+        <div class="row"><span>Empresa</span><span>Rebase</span></div>
+        <div class="row"><span>Foco</span><span>Product Design · Design Systems</span></div>
+        <div class="row"><span>Ferramentas</span><span>Figma, Claude</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="section-head">
+      <h2>Contato</h2>
+    </div>
+    <div class="contact">
+      <a class="big-link" href="mailto:debora.rodrigues@rebase.com.br">debora.rodrigues@rebase.com.br</a>
+      <div class="row-links">
+        <a href="#" title="Placeholder — adicione seu LinkedIn">LinkedIn ↗</a>
+        <a href="#" title="Placeholder — adicione seu currículo">Currículo ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Débora Rodrigues</span>
+    <span>Rascunho gerado com Claude — troque os placeholders pelos seus projetos reais.</span>
+  </footer>
+</div>
+
+</body></html>
