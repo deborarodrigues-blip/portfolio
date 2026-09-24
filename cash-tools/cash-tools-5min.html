@@ -238,8 +238,10 @@ html.js .tbl.pre tbody tr{opacity:0;transform:translateY(6px)}
 .ex.cp b,.ex.cp span.d{color:#fff}
 .ex.cp .ico{background:rgba(255,255,255,.22)}
 .ex.cp .tag{background:#fff;color:var(--blue)}
-.ret{display:inline-flex;align-items:center;gap:8px;height:28px;padding:0 12px;border-radius:14px;background:#e6edfe;color:var(--blue);font-size:12px;font-weight:600;align-self:flex-start}
+.ret{display:inline-flex;align-items:center;gap:8px;min-height:28px;padding:6px 14px 6px 12px;margin-top:var(--s2);border-radius:14px;background:#e6edfe;color:var(--blue);font-size:12px;line-height:1.35;font-weight:600;align-self:flex-start}
 .ret svg{flex:none}
+@keyframes pulse-soft{0%{transform:scale(1)}40%{transform:scale(1.03)}100%{transform:scale(1)}}
+.ex.cp.do-pulse{animation-name:pulse-soft}
 
 /* ---------- 05 resultados ---------- */
 .res{display:flex;flex-direction:column;gap:0;padding-block:var(--s3)}
