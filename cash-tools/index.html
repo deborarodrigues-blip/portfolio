@@ -1,4 +1,6 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Cash.Tools Case Study</title><meta name="description" content="Case study Cash.Tools — Débora Rodrigues, Senior Product Designer."><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"></head><body>
+<title>Cash.Tools Case Study</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap">
@@ -68,7 +70,10 @@ button:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-rad
 .vmenu button{display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:8px 12px;border-radius:10px;text-align:left}
 .vmenu button b{font-size:14px;font-weight:600;color:var(--ink)}
 .vmenu button span{font-size:12px;color:var(--muted)}
-.vmenu button:hover{background:#f5f7fd}
+.vmenu button:hover,.vmenu .vlink:hover{background:#f5f7fd}
+.vmenu .vlink{display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:8px 12px;border-radius:10px;text-decoration:none;border-top:1px solid var(--border);margin-top:2px;border-top-left-radius:0;border-top-right-radius:0}
+.vmenu .vlink b{font-size:14px;font-weight:600;color:var(--ink)}
+.vmenu .vlink span{font-size:12px;color:var(--muted)}
 .vmenu button.on{background:#eef2fb}
 .vmenu button.on b{color:var(--blue)}
 .progress{position:fixed;left:0;right:0;bottom:0;height:2px;background:rgba(61,103,209,.12);z-index:20}
@@ -259,7 +264,8 @@ button:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-rad
 .tmode button{height:32px;padding:0 12px;border-radius:8px;text-align:left;font-size:14px;color:var(--ink)}
 .tmode button:hover{background:#f5f7fd}
 .tmode button.on{background:#eef2fb;color:var(--blue);font-weight:600}
-@media (max-width:980px){.toggle{display:none}.brand{width:auto}}
+@media (max-width:980px){.toggle{width:auto}.brand{width:auto}.tabs{display:none}}
+@media (max-width:520px){.vbtn{height:30px;padding:0 10px;font-size:13px}.brand{gap:6px}.brand>b{display:none}}
 @media (max-width:640px){:root{--hh:56px}.brand .cs,.brand .dot{display:none}.brand{font-size:14px}.tabs{position:static;transform:none;gap:14px;font-size:13px}.tabline{bottom:0}.hint .keys{display:none}}
 
 
@@ -543,6 +549,7 @@ html.short .c21i{height:44px!important}
     <header class="header">
       <div class="brand"><b>Cash.Tools</b><span class="dot">·</span><span class="cs">Case study</span><span class="dot">·</span>
         <span class="pager">
+          <button id="first" aria-label="Voltar ao slide 1" title="Voltar ao slide 1"><svg viewBox="0 0 14 14" fill="none" style="width:13px;height:14px"><path d="M2 1.5v11M11.5 1.5 6 7l5.5 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <button id="prev" aria-label="Slide anterior"><svg viewBox="0 0 9 14" fill="none"><path d="M7.5 1.5 2 7l5.5 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <span id="counter">01 / 22</span>
           <button id="next" aria-label="Próximo slide"><svg viewBox="0 0 9 14" fill="none"><path d="M1.5 1.5 7 7l-5.5 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -562,6 +569,7 @@ html.short .c21i{height:44px!important}
           <button class="on" id="vFull" role="menuitemradio"><b>Completa</b><span>22 slides · case inteiro</span></button>
           <button id="vShort" role="menuitemradio"><b>Resumida</b><span>10 slides · ~10 min</span></button>
           <button id="vFive" role="menuitemradio"><b>5 min</b><span>6 slides · pitch rápido</span></button>
+          <a class="vlink" href="cash-tools-5min.html" target="_blank" rel="noopener" role="menuitem"><b>5 min · página única ↗</b><span>Rolagem contínua · celular</span></a>
         </div>
       </div></div>
     </header>
@@ -879,6 +887,7 @@ html.short .c21i{height:44px!important}
 <div class="progress"><i id="bar"></i></div>
 
 <div class="hint" id="hint">
+  <button class="hbtn" id="home" aria-label="Voltar ao slide 1" title="Voltar ao slide 1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5M5.5 9v11h13V9"/></svg></button>
   <button class="hbtn" id="fs" aria-label="Tela cheia" title="Tela cheia"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
 </div>
 
@@ -1067,7 +1076,7 @@ const order=['story','method','ui','ai'];
 function setHeader(s){
   const n=mode5==='five'?+(s.dataset.five||0):short?+(s.dataset.short||0):+s.dataset.num;const tm=document.getElementById('tmr');if(tm){const t=TIMES[key(s)]||'';tm.textContent=t;tm.parentElement.style.visibility=t?'visible':'hidden';}document.getElementById('counter').textContent=n?String(n).padStart(2,'0')+' / '+String(TOTAL).padStart(2,'0'):'Perfil';
   document.getElementById('bar').style.width=(n/TOTAL*100)+'%';
-  document.getElementById('prev').disabled=cur===0;document.getElementById('next').disabled=cur===slides.length-1;
+  document.getElementById('prev').disabled=cur===0;document.getElementById('first').disabled=cur===0;document.getElementById('next').disabled=cur===slides.length-1;
   tabs.forEach(t=>t.classList.toggle('on',t.dataset.tab===s.dataset.tab));
   
   const g=(s.dataset.glow||'760,420,900,420').split(',');['--gx','--gy','--gw','--gh'].forEach((k,i)=>glow.style.setProperty(k,g[i]+'px'));
@@ -1134,6 +1143,8 @@ function lightGo(from,to,fwd,i){
   last.onfinish=()=>{anims.forEach(a=>a.cancel());to.style.transition='';to.style.opacity='';to.style.visibility='';to.classList.add('active');busy=false;play(to);};
 }
 window.__go=go;document.getElementById('prev').onclick=()=>go(cur-1);
+const goFirst=()=>{if(cur===0)return;if(busy){setTimeout(goFirst,250);return;}go(0);};
+document.getElementById('first').onclick=goFirst;document.getElementById('home').onclick=goFirst;
 document.getElementById('next').onclick=()=>go(cur+1);
 addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(cur+1);}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(cur-1);}
   if(e.key==='Home')go(0);if(e.key==='End')go(slides.length-1);});
@@ -1157,8 +1168,7 @@ function setMode(m){if(busy)return;if(m===true)m='short';if(m===false)m='full';m
  TOTAL=m==='full'?22:m==='short'?10:6;
  tabs.forEach(t=>t.classList.toggle('gone',!slides.some(sl=>sl.dataset.tab===t.dataset.tab&&+sl.dataset.num>0)));
  ALL.forEach(sl=>{const b=sl.querySelector('.marker b');if(b){const n=m==='full'?sl.dataset.num:m==='short'?sl.dataset.short:sl.dataset.five;b.textContent=n?String(n).padStart(2,'0'):b.dataset.full;}});
- let i=slides.indexOf(curEl);if(i<0){const n=+curEl.dataset.num;i=slides.findIndex(x=>+x.dataset.num>=n);if(i<0)i=slides.length-1;}
- cur=i;slides[cur].classList.add('active');setHeader(slides[cur]);play(slides[cur]);}
+ cur=0; /* trocar de versão sempre recomeça no primeiro slide */slides[cur].classList.add('active');setHeader(slides[cur]);play(slides[cur]);}
 const vsel=document.querySelector('.vsel');document.getElementById('vBtn').onclick=e=>{e.stopPropagation();const o=vsel.classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',o);};
 document.addEventListener('click',e=>{if(!e.target.closest('.vsel'))vsel.classList.remove('open');});
 document.getElementById('vFull').onclick=()=>setMode('full');document.getElementById('vShort').onclick=()=>setMode('short');document.getElementById('vFive').onclick=()=>setMode('five');
