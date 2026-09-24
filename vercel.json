@@ -1,0 +1,7 @@
+{
+  "redirects": [
+    { "source": "/cash-tools", "destination": "/", "permanent": false },
+    { "source": "/cash-tools/", "destination": "/", "permanent": false },
+    { "source": "/cash-tools/index.html", "destination": "/", "permanent": false }
+  ]
+}

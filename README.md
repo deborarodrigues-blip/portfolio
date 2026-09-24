@@ -6,9 +6,10 @@ Site estático (HTML puro), pronto para publicar no Vercel via GitHub.
 
 ```
 portfolio/
-├── index.html              → página inicial (deborarodrigues.vercel.app)
+├── index.html              → apresentação Cash.Tools (deborarodrigues.vercel.app)
 ├── cash-tools/
-│   └── index.html          → case Cash.Tools (…/cash-tools)
+│   └── cash-tools-5min.html → versão 5 min, página única (…/cash-tools/cash-tools-5min.html)
+├── vercel.json             → redireciona o endereço antigo /cash-tools/ para a página inicial
 └── README.md               → este guia
 ```
 
