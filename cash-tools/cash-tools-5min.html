@@ -42,8 +42,8 @@ h2 em.v{color:var(--violet)}
 .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(247,249,254,.84);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(61,103,209,.08)}
 .bar-in{max-width:760px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:var(--s3)}
 .lft{display:flex;align-items:center;gap:10px;min-width:0}
-.back{display:inline-flex;align-items:center;gap:4px;height:32px;padding:0 10px 0 6px;border-radius:16px;background:#fff;border:1px solid var(--border);color:var(--ink);text-decoration:none;font-size:12px;font-weight:700;box-shadow:var(--clay-sm);flex:none;transition:color .2s,transform .2s}
-.back:hover{color:var(--blue);transform:translateX(-2px)}
+.back{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 12px 0 10px;border-radius:16px;background:#fff;border:1px solid var(--border);color:var(--ink);text-decoration:none;font-size:12px;font-weight:700;box-shadow:var(--clay-sm);flex:none;transition:color .2s,transform .2s}
+.back:hover{color:var(--blue)}
 .brand{font-size:14px;color:var(--muted);font-weight:500;white-space:nowrap}
 .brand b{color:var(--ink);font-weight:700}
 .dots{display:flex;gap:4px;align-items:center}
@@ -286,6 +286,12 @@ html.js .bars.pre .after{width:100%}
 .venn .d{position:absolute;left:50%;top:58%;transform:translate(-50%,-50%);background:linear-gradient(90deg,var(--deep),var(--mid));color:#fff;font-size:12px;font-weight:700;border-radius:14px;padding:5px 12px;box-shadow:var(--clay-blue);white-space:nowrap}
 .venn .d.pre{transform:translate(-50%,-50%) scale(.6)}
 .top{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 18px;border-radius:21px;background:#fff;border:1px solid var(--border);font:inherit;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--clay-sm);margin-top:var(--s3)}
+.more{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);margin-top:var(--s5);padding:var(--s4) var(--s5);border-radius:20px;background:linear-gradient(135deg,var(--blue),var(--mid));color:#fff;text-decoration:none;box-shadow:var(--clay-blue)}
+.more span{display:flex;flex-direction:column;gap:2px}
+.more b{font-family:var(--display);font-size:17px;line-height:1.3}
+.more em{font-style:normal;font-size:13px;opacity:.88}
+.more svg{flex:none;transition:transform .2s}
+.more:hover svg{transform:translateX(3px)}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -306,8 +312,6 @@ html.js .bars.pre .after{width:100%}
   .wire svg{transform:rotate(90deg)}
   .hub{flex-direction:row;text-align:left;padding:16px 18px}
   .brand .cs{display:none}
-  .back span{display:none}
-  .back{padding:0;width:32px;justify-content:center}
   .bar-in{padding-inline:16px}
   .dots{gap:0}
   .dots a{width:23px;height:23px;font-size:10px}
@@ -332,7 +336,7 @@ html.js .bars.pre .after{width:100%}
 
 <header class="bar">
   <div class="bar-in">
-    <div class="lft"><a class="back" href="/" aria-label="Voltar para as apresentações" title="Voltar para as apresentações"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><span>Apresentações</span></a><div class="brand"><b>Cash.Tools</b><span class="cs"> · Case study · 5 min</span></div></div>
+    <div class="lft"><a class="back" href="/" aria-label="Ver a versão em slides" title="Ver a versão em slides"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><span>Slides</span></a><div class="brand"><b>Cash.Tools</b><span class="cs"> · Case study · 5 min</span></div></div>
     <nav class="dots" aria-label="Seções">
       <a href="#capa" class="on" aria-label="Capa">01</a>
       <a href="#problema" aria-label="O problema">02</a>
@@ -536,6 +540,7 @@ html.js .bars.pre .after{width:100%}
         <div class="chips" data-a="up" data-d="1950"><span class="chip v">Pesquisa</span><span class="chip v">Síntese</span><span class="chip v">Documentação</span><span class="chip v">Prototipação</span></div>
       </div>
     </div>
+    <a class="more" href="/" data-a="up" data-d="0"><span><b>Quer ver com mais detalhes?</b><em>Apresentação completa em slides · melhor no computador</em></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="top" href="#capa"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>Voltar ao início</a>
   </section>
 </main>
@@ -606,6 +611,7 @@ html.js .bars.pre .after{width:100%}
   at(2350,endIntro);
   const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){play(en.target);io.unobserve(en.target);}}),{threshold:.12,rootMargin:'0px 0px -8% 0px'});
   secs.slice(1).forEach(s=>io.observe(s));
+  document.querySelectorAll('a.back,a.more').forEach(a=>a.addEventListener('click',()=>{try{sessionStorage.setItem('ct-view','desktop');}catch(e){}}));
 })();
 </script>
 </body></html>
